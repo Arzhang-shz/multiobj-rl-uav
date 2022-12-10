@@ -119,6 +119,20 @@ Trade-offs observed as UAV speed changes.
 
 Comparison of performance with different weight settings for throughput vs. localization.
 
+## Citation
+
+If you use this code or refer to this work, please cite the corresponding publication.
+
+
+```bibtex
+@phdthesis{shahbazi2022machine,
+  title={Machine Learning Techniques for UAV-assisted Networks},
+  author={Shahbazi, Arzhang},
+  year={2022},
+  school={Universit{\'e} Paris-Saclay}
+}
+```
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
