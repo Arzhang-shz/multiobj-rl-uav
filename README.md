@@ -64,60 +64,80 @@ python Double_DQN.py
 
 ## Key Results
 
-The following figures summarize simulation results and provide insights into the trade-offs between throughput, localization error, and UAV speed.
+Below are key results from our simulations, illustrating the trade-offs between throughput, localization error, energy consumption, and UAV speed.
 
-### **Fig. 1: System Architecture**
-![System Architecture](Figures/fig1.png)
-The UAV communicates with users and localizes targets in a DFRC setup.
+<p align="center">
+  <img src="Figures/fig1.png" alt="System Architecture" width="400"/>
+  <br/>
+  <em>Figure 1: The UAV communicates with users and localizes targets in a DFRC setup.</em>
+</p>
 
----
+<p align="center">
+  <img src="Figures/fig2.png" alt="Trilateration" width="400"/>
+  <br/>
+  <em>Figure 2: Concentric RSSI circles are used to estimate user positions via trilateration.</em>
+</p>
 
-### **Fig. 2: Trilateration-Based Localization**
-![Trilateration](Figures/fig2.png)
-Concentric RSSI circles are used to estimate user positions.
+<p align="center">
+  <img src="Figures/speed_fig.png" alt="Power Consumption" width="400"/>
+  <br/>
+  <em>Figure 3: Relationship between UAV speed and power consumption components.</em>
+</p>
 
----
+<p align="center">
+  <img src="Figures/fig_4.png" alt="RSSI Ring Intersection" width="400"/>
+  <br/>
+  <em>Figure 4: Intersecting RSSI rings help localize ground targets.</em>
+</p>
 
-### **Fig. 3: Power Consumption vs UAV Speed**
-![Power Consumption](Figures/speed_fig.png)
-Shows the relationship between speed and power consumption components.
+<p align="center">
+  <img src="Figures/my_figure_1.png" alt="Transmitted Bits" width="400"/>
+  <br/>
+  <em>Figure 5a: Transmitted bits over episodes during training.</em>
+</p>
 
----
+<p align="center">
+  <img src="Figures/my_figure_2.png" alt="Localization Error" width="400"/>
+  <br/>
+  <em>Figure 5b: Convergence of localization error during training.</em>
+</p>
 
-### **Fig. 4: RSSI Ring Intersections**
-![Ring Intersection](Figures/fig_4.png)
-Illustrates how two RSSI-based measurements help localize targets.
+<p align="center">
+  <img src="Figures/my_figure_4.png" alt="Flight Time" width="400"/>
+  <br/>
+  <em>Figure 5c: UAV flight time evolution during DDQN training.</em>
+</p>
 
----
+<p align="center">
+  <img src="Figures/new_fig_1.png" alt="Throughput vs Localization" width="400"/>
+  <br/>
+  <em>Figure 6a: Trade-off between throughput and localization error at different speeds.</em>
+</p>
 
-### **Fig. 5: Training Curves**
-- **(a)** Transmitted Bits  
-![Bits](Figures/my_figure_1.png)
-- **(b)** Localization Error  
-![Error](Figures/my_figure_2.png)
-- **(c)** UAV Flight Time  
-  ![Flight Time](Figures/my_figure_4.png)
+<p align="center">
+  <img src="Figures/new_fig_2.png" alt="Flight Time vs Speed" width="400"/>
+  <br/>
+  <em>Figure 6b: UAV flight time changes with varying speeds.</em>
+</p>
 
-DDQN training results showing convergence of key objectives.
+<p align="center">
+  <img src="Figures/10_w_1.png" alt="Reward Weight 1" width="400"/>
+  <br/>
+  <em>Figure 7a: Performance under reward setting w₁.</em>
+</p>
 
----
+<p align="center">
+  <img src="Figures/10_w_2.png" alt="Reward Weight 2" width="400"/>
+  <br/>
+  <em>Figure 7b: Performance under reward setting w₂.</em>
+</p>
 
-### **Fig. 6: Impact of UAV Speed**
-- **(a)** Throughput vs. Localization Error  
-  ![Speed 1](Figures/new_fig_1.png)
-- **(b)** UAV Flight Time  
-  ![Speed 2](Figures/new_fig_2.png)
+<p align="center">
+  <img src="Figures/10_w_3.png" alt="Reward Weight 3" width="400"/>
+  <br/>
+  <em>Figure 7c: Performance under reward setting w₃.</em>
+</p>
 
-Trade-offs observed as UAV speed changes.
-
----
-
-### **Fig. 7: Performance Under Different Reward Weights**
-- ![10_w_1](Figures/10_w_1.png)
-- ![10_w_2](Figures/10_w_2.png)
-- ![10_w_3](Figures/10_w_3.png)
-
-Comparison of performance with different weight settings for throughput vs. localization.
 
 
 ## Citation
