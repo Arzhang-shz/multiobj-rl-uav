@@ -121,7 +121,7 @@ Comparison of performance with different weight settings for throughput vs. loca
 
 ## Citation
 
-If you use this code, please cite the associated ["Machine Learning Techniques for UAV-assisted Networks"](https://theses.hal.science/tel-03889218/file/118554_SHAHBAZI_2022_archivage.pdf).
+If you use this code, please cite the associated [Machine Learning Techniques for UAV-assisted Networks](https://theses.hal.science/tel-03889218/file/118554_SHAHBAZI_2022_archivage.pdf).
 
 
 
