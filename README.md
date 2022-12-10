@@ -21,9 +21,17 @@ This repository contains the code and core results for a research project explor
 ```
 paper/                  # LaTeX source and figures (up to Fig. 7)
 training/               # Training scripts and RL model code
+    train_dqn.py        # Deep Q-Network training script for the EUAV environment.
 models/                 # Saved models or checkpoints
 requirements.txt        # Python dependencies
 README.md               # Project documentation
+config.py               # Configuration file for the EUAV environment, defining various parameters and settings.
+euav_env.py             # Gym Environment using modular configuration and utilities.
+Utils/                  # Directory containing utility modules.
+    energy.py           # Energy consumption and battery update.
+    geometry.py         # Geometry utilities for the EUAV environment.
+    propagation.py      # Propagation model utilities for the EUAV environment.
+    trilateration.py    # Trilateration utilities for the EUAV environment.
 ```
 
 ## Setup
