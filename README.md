@@ -149,6 +149,3 @@ If you use this code, please cite the associated thesis [*Machine Learning Techn
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## Acknowledgements
-
-This research was supported by the European Commission through the H2020 PAINLESS Project under Grant 812991.
