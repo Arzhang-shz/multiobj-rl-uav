@@ -4,6 +4,7 @@ This repository contains the code and core results for a research project explor
 
 ## Overview
 
+This project is part of my PhD research.
 - **Dual-Functional Radar-Communication (DFRC):** A single UAV is used to serve communication users and perform ground target localization simultaneously.
 - **Multi-Objective Optimization:** A reinforcement learning framework balances conflicting objectives: communication efficiency and localization precision.
 - **Energy-Constrained Trajectory Design:** UAV motion is constrained by its limited energy capacity, affecting flight time and sensing opportunities.
@@ -19,10 +20,10 @@ This repository contains the code and core results for a research project explor
 ## Repository Structure
 
 ```
-paper/                  # LaTeX source and figures (up to Fig. 7)
-training/               # Training scripts and RL model code
+Figures/                  # Project Figures
+training/               # Training script example for RL model
     train_dqn.py        # Deep Q-Network training script for the EUAV environment.
-models/                 # Saved models or checkpoints
+
 requirements.txt        # Python dependencies
 README.md               # Project documentation
 config.py               # Configuration file for the EUAV environment, defining various parameters and settings.
@@ -66,36 +67,36 @@ python Double_DQN.py
 The following figures summarize simulation results and provide insights into the trade-offs between throughput, localization error, and UAV speed.
 
 ### **Fig. 1: System Architecture**
-![System Architecture](paper/Figures/fig1.png)  
+![System Architecture](Figures/fig1.png)
 The UAV communicates with users and localizes targets in a DFRC setup.
 
 ---
 
 ### **Fig. 2: Trilateration-Based Localization**
-![Trilateration](paper/Figures/fig2.png)  
+![Trilateration](Figures/fig2.png)
 Concentric RSSI circles are used to estimate user positions.
 
 ---
 
 ### **Fig. 3: Power Consumption vs UAV Speed**
-![Power Consumption](paper/Figures/speed_fig.png)  
+![Power Consumption](Figures/speed_fig.png)
 Shows the relationship between speed and power consumption components.
 
 ---
 
 ### **Fig. 4: RSSI Ring Intersections**
-![Ring Intersection](paper/Figures/fig_4.png)  
+![Ring Intersection](Figures/fig_4.png)
 Illustrates how two RSSI-based measurements help localize targets.
 
 ---
 
 ### **Fig. 5: Training Curves**
 - **(a)** Transmitted Bits  
-  ![Bits](paper/Figures/my_figure_1.png)  
+![Bits](Figures/my_figure_1.png)
 - **(b)** Localization Error  
-  ![Error](paper/Figures/my_figure_2.png)  
+![Error](Figures/my_figure_2.png)
 - **(c)** UAV Flight Time  
-  ![Flight Time](paper/Figures/my_figure_4.png)
+  ![Flight Time](Figures/my_figure_4.png)
 
 DDQN training results showing convergence of key objectives.
 
@@ -103,18 +104,18 @@ DDQN training results showing convergence of key objectives.
 
 ### **Fig. 6: Impact of UAV Speed**
 - **(a)** Throughput vs. Localization Error  
-  ![Speed 1](paper/Figures/new_fig_1.png)
+  ![Speed 1](Figures/new_fig_1.png)
 - **(b)** UAV Flight Time  
-  ![Speed 2](paper/Figures/new_fig_2.png)
+  ![Speed 2](Figures/new_fig_2.png)
 
 Trade-offs observed as UAV speed changes.
 
 ---
 
 ### **Fig. 7: Performance Under Different Reward Weights**
-- ![10_w_1](paper/Figures/10_w_1.png)
-- ![10_w_2](paper/Figures/10_w_2.png)
-- ![10_w_3](paper/Figures/10_w_3.png)
+- ![10_w_1](Figures/10_w_1.png)
+- ![10_w_2](Figures/10_w_2.png)
+- ![10_w_3](Figures/10_w_3.png)
 
 Comparison of performance with different weight settings for throughput vs. localization.
 
