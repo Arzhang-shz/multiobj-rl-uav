@@ -20,7 +20,7 @@ This project is part of my PhD research.
 ## Repository Structure
 
 ```
-Figures/                  # Project Figures
+Figures/                # Project Figures
 training/               # Training script example for RL model
     train_dqn.py        # Deep Q-Network training script for the EUAV environment.
 
@@ -118,10 +118,6 @@ Trade-offs observed as UAV speed changes.
 - ![10_w_3](Figures/10_w_3.png)
 
 Comparison of performance with different weight settings for throughput vs. localization.
-
-## Citation
-
-If you use this code or refer to this work, please cite the corresponding publication (to be added when available).
 
 ## License
 
