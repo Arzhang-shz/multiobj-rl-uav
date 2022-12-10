@@ -29,18 +29,27 @@ The simulation results demonstrate the trade-off between communication throughpu
 
 The following figures illustrate the key results:
 
-*   **System Architecture:** `paper/Figures/fig1.pdf`
-*   **Trilateration for Localization:** `paper/Figures/fig2.pdf`
-*   **Power Consumption vs. UAV Speed:** `paper/Figures/speed_fig.eps`
+*   **System Architecture:** ![System Architecture](paper/Figures/fig1.pdf)
+*   **Trilateration for Localization:** ![Trilateration for Localization](paper/Figures/fig2.pdf)
+*   **Power Consumption vs. UAV Speed:** ![Power Consumption vs. UAV Speed](paper/Figures/speed_fig.eps)
 *   **Training Curves:**
-    *   Number of Transmitted Bits: `paper/Figures/my_figure_1.eps`
-    *   Localization Error: `paper/Figures/my_figure_2.eps`
-    *   UAV Flight Time: `paper/Figures/my_figure_4.eps`
-    *   Accumulated Reward: `paper/Figures/my_figure_5.eps`
+    *   Number of Transmitted Bits: ![Number of Transmitted Bits](paper/Figures/my_figure_1.eps)
+    *   Localization Error: ![Localization Error](paper/Figures/my_figure_2.eps)
+    *   UAV Flight Time: ![UAV Flight Time](paper/Figures/my_figure_4.eps)
+    *   Accumulated Reward: ![Accumulated Reward](paper/Figures/my_figure_5.eps)
 *   **Impact of UAV Speed:**
-    *   Number of Transmitted Bits and Localization Error: `paper/Figures/new_fig_1.eps`
-    *   UAV Flight Time: `paper/Figures/new_fig_2.eps`
-*   **Performance Comparison for Different Weights and UAV Speeds:** `paper/Figures/10_w_1.eps`, `10_w_2.eps`, `10_w_3.eps`, `20_w_1.eps`, `20_w_2.eps`, `20_w_3.eps`, `30_w_1.eps`, `30_w_2.eps`, `30_w_3.eps`
+    *   Number of Transmitted Bits and Localization Error: ![Number of Transmitted Bits and Localization Error](paper/Figures/new_fig_1.eps)
+    *   UAV Flight Time: ![UAV Flight Time](paper/Figures/new_fig_2.eps)
+*   **Performance Comparison for Different Weights and UAV Speeds:**
+    *   ![Performance Comparison](paper/Figures/10_w_1.eps)
+    *   ![Performance Comparison](paper/Figures/10_w_2.eps)
+    *   ![Performance Comparison](paper/Figures/10_w_3.eps)
+    *   ![Performance Comparison](paper/Figures/20_w_1.eps)
+    *   ![Performance Comparison](paper/Figures/20_w_2.eps)
+    *   ![Performance Comparison](paper/Figures/20_w_3.eps)
+    *   ![Performance Comparison](paper/Figures/30_w_1.eps)
+    *   ![Performance Comparison](paper/Figures/30_w_2.eps)
+    *   ![Performance Comparison](paper/Figures/30_w_3.eps)
 
 ## Getting Started
 
