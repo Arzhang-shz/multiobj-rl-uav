@@ -1,97 +1,78 @@
-# EUAV Gym Environment
+# Multi-Objective Trajectory Design for UAV-Assisted Dual-Functional Radar-Communication Network: A Reinforcement Learning Approach
 
-This repository provides a modular, reusable implementation of an Unmanned Aerial Vehicle (UAV) localization and communication environment built on OpenAI Gym. It includes:
+This project explores the optimal trajectory for maximizing communication throughput and minimizing localization error in a Dual-Functional Radar Communication (DFRC) network using an unmanned aerial vehicle (UAV). A single UAV serves a group of communication users and localizes ground targets simultaneously.
 
-* **`config.py`**: Centralized configuration of physical constants, UAV parameters, battery limits, and action definitions.
-* **`euav_env.py`**: `EUAVEnv` Gym environment subclass that implements:
+## Key Features
 
-  * Distance estimation via a shadowing and path-loss model
-  * Two-stage trilateration for user localization
-  * Communication rate computation for six real users
-  * Energy consumption modeling and battery cutoff logic
-  * Reward based on throughput and localization accuracy
-* **`utils/`**: Helper modules:
+*   **Dual-Functional Radar-Communication (DFRC):** A single UAV performs both communication and radar sensing tasks, reducing resource consumption and interference.
+*   **Reinforcement Learning (RL):** A novel framework based on RL enables the UAV to autonomously find its trajectory to improve localization accuracy and maximize the number of transmitted bits.
+*   **Multi-Objective Optimization:** A multi-objective optimization problem is formulated to jointly optimize communication throughput and localization error, considering UAV energy constraints.
+*   **Double Deep Q-Network (DDQN):** The DDQN algorithm is used to train the UAV agent to make optimal decisions in a complex and dynamic environment.
 
-  * `propagation.py` – distance estimation functions
-  * `geometry.py` – grid-point generation for trilateration
-  * `trilateration.py` – two trilateration routines
-  * `energy.py` – UAV energy and speed modeling
-* **`training/`**: Training scripts for DQN-based agents (e.g. `train_dqn.py`)
-* **`models/`**: Output directory for trained weights and plots
-* **`tests/`**: Unit tests for each utility and a smoke test for the environment
+## Methodology
 
----
+The project utilizes a Double Deep Q-Network (DDQN) agent to control the UAV's trajectory. The agent learns to optimize its path based on the following factors:
 
-## Installation
+*   UAV location
+*   Estimated distances and localization error of ground targets
+*   Communication rate of users
+*   UAV energy consumption
 
-1. Clone this repository:
+The reward function is designed to balance communication throughput and localization accuracy, with weights assigned to each objective.
 
-   ```bash
-   git clone https://github.com/your-username/euav-gym.git
-   cd euav-gym
-   ```
+## Results
 
-2. Create a virtual environment and install dependencies:
+The simulation results demonstrate the trade-off between communication throughput and localization error.
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+*   **UAV Speed:** Higher UAV speeds lead to better localization accuracy but lower communication throughput, and vice versa.
+*   **Reward Weights:** Adjusting the weights in the reward function allows prioritizing either communication or localization performance.
 
-## Usage
+The following figures illustrate the key results:
 
-### Running the environment
+*   **System Architecture:** `paper/Figures/fig1.pdf`
+*   **Trilateration for Localization:** `paper/Figures/fig2.pdf`
+*   **Power Consumption vs. UAV Speed:** `paper/Figures/speed_fig.eps`
+*   **Training Curves:**
+    *   Number of Transmitted Bits: `paper/Figures/my_figure_1.eps`
+    *   Localization Error: `paper/Figures/my_figure_2.eps`
+    *   UAV Flight Time: `paper/Figures/my_figure_4.eps`
+    *   Accumulated Reward: `paper/Figures/my_figure_5.eps`
+*   **Impact of UAV Speed:**
+    *   Number of Transmitted Bits and Localization Error: `paper/Figures/new_fig_1.eps`
+    *   UAV Flight Time: `paper/Figures/new_fig_2.eps`
+*   **Performance Comparison for Different Weights and UAV Speeds:** `paper/Figures/10_w_1.eps`, `10_w_2.eps`, `10_w_3.eps`, `20_w_1.eps`, `20_w_2.eps`, `20_w_3.eps`, `30_w_1.eps`, `30_w_2.eps`, `30_w_3.eps`
 
-```python
-from euav_env import EUAVEnv
+## Getting Started
 
-env = EUAVEnv()
-state = env.reset()
-for _ in range(100):
-    action = env.action_space.sample()
-    state, reward, done, info = env.step(action)
-    if done:
-        break
-```
+1.  **Clone the repository:**
 
-### Training a DQN agent
+    ```bash
+    git clone <repository_url>
+    cd <repository_name>
+    ```
 
-```bash
-python training/train_dqn.py \
-    --episodes 2000 \
-    --batch_size 32 \
-    --epsilon 0.9 \
-    --epsilon_decay 0.99 \
-    --epsilon_min 0.01 \
-    --discount_factor 0.9 \
-    --log_interval 50 \
-    --model_path models/dqn_weights.h5 \
-    --plot_path models/reward_plot.png
-```
+2.  **Install the dependencies:**
 
-## Project Structure
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```
-euav-gym/             # Repository root
-+-- config.py
-+-- euav_env.py
-+-- utils/            # Utility modules
-+-- training/         # Training scripts
-¦   +-- train_dqn.py
-+-- models/           # Outputs (weights, plots)
-+-- tests/            # Unit and integration tests
-+-- README.md         # Project overview
-+-- requirements.txt  # Python dependencies
-+-- .gitignore
-```
+3.  **Run the training script:**
 
-## Testing
+    ```bash
+    python training/train_dqn.py
+    ```
 
-```bash
-pytest tests/
-```
+    or
+
+    ```bash
+    python Double_DQN.py
+    ```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues to suggest improvements or report bugs.
 
 ## License
 
-This project is released under the MIT License. See [LICENSE](LICENSE) for details.
+[License]
