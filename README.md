@@ -144,7 +144,7 @@ Below are key results from our simulations, illustrating the trade-offs between 
 
 If you use this code, please cite the associated thesis:
 
-[*Machine Learning Techniques for UAV-assisted Networks* (PDF)](https://theses.hal.science/tel-03889218/file/118554_SHAHBAZI_2022_archivage.pdf).
+[*Machine Learning Techniques for UAV-assisted Networks*](https://theses.hal.science/tel-03889218/file/118554_SHAHBAZI_2022_archivage.pdf).
 
 
 ## License
