@@ -1,87 +1,123 @@
 # Multi-Objective Trajectory Design for UAV-Assisted Dual-Functional Radar-Communication Network: A Reinforcement Learning Approach
 
-This project explores the optimal trajectory for maximizing communication throughput and minimizing localization error in a Dual-Functional Radar Communication (DFRC) network using an unmanned aerial vehicle (UAV). A single UAV serves a group of communication users and localizes ground targets simultaneously.
+This repository contains the code and core results for a research project exploring the use of reinforcement learning (RL) to design optimal UAV trajectories in a dual-functional radar-communication (DFRC) network. The project aims to simultaneously maximize communication throughput and minimize localization error under UAV energy constraints.
 
-## Key Features
+## Overview
 
-*   **Dual-Functional Radar-Communication (DFRC):** A single UAV performs both communication and radar sensing tasks, reducing resource consumption and interference.
-*   **Reinforcement Learning (RL):** A novel framework based on RL enables the UAV to autonomously find its trajectory to improve localization accuracy and maximize the number of transmitted bits.
-*   **Multi-Objective Optimization:** A multi-objective optimization problem is formulated to jointly optimize communication throughput and localization error, considering UAV energy constraints.
-*   **Double Deep Q-Network (DDQN):** The DDQN algorithm is used to train the UAV agent to make optimal decisions in a complex and dynamic environment.
+- **Dual-Functional Radar-Communication (DFRC):** A single UAV is used to serve communication users and perform ground target localization simultaneously.
+- **Multi-Objective Optimization:** A reinforcement learning framework balances conflicting objectives: communication efficiency and localization precision.
+- **Energy-Constrained Trajectory Design:** UAV motion is constrained by its limited energy capacity, affecting flight time and sensing opportunities.
+- **Reinforcement Learning Approach:** A Double Deep Q-Network (DDQN) agent learns optimal trajectories in complex, partially observable environments.
 
-## Methodology
+## Highlights
 
-The project utilizes a Double Deep Q-Network (DDQN) agent to control the UAV's trajectory. The agent learns to optimize its path based on the following factors:
+- Formulation of a multi-objective optimization problem for UAV trajectory.
+- Custom reward function integrating localization error and communication rate.
+- Use of RSS-based trilateration with variable shadowing for localization.
+- Simulation of the UAV's behavior under various reward weights and speeds.
 
-*   UAV location
-*   Estimated distances and localization error of ground targets
-*   Communication rate of users
-*   UAV energy consumption
+## Repository Structure
 
-The reward function is designed to balance communication throughput and localization accuracy, with weights assigned to each objective.
+```
+paper/                  # LaTeX source and figures (up to Fig. 7)
+training/               # Training scripts and RL model code
+models/                 # Saved models or checkpoints
+requirements.txt        # Python dependencies
+README.md               # Project documentation
+```
 
-## Results
+## Setup
 
-The simulation results demonstrate the trade-off between communication throughput and localization error.
+### 1. Clone the Repository
 
-*   **UAV Speed:** Higher UAV speeds lead to better localization accuracy but lower communication throughput, and vice versa.
-*   **Reward Weights:** Adjusting the weights in the reward function allows prioritizing either communication or localization performance.
+```bash
+git clone https://github.com/yourusername/DFRC-RL-UAV.git
+cd DFRC-RL-UAV
+```
 
-The following figures illustrate the key results:
+### 2. Install Dependencies
 
-*   **System Architecture:** ![System Architecture](paper/Figures/fig1.png)
-*   **Trilateration for Localization:** ![Trilateration for Localization](paper/Figures/fig2.png)
-*   **Power Consumption vs. UAV Speed:** ![Power Consumption vs. UAV Speed](paper/Figures/speed_fig.png)
-*   **Training Curves:**
-    *   Number of Transmitted Bits: ![Number of Transmitted Bits](paper/Figures/my_figure_1.png)
-    *   Localization Error: ![Localization Error](paper/Figures/my_figure_2.png)
-    *   UAV Flight Time: ![UAV Flight Time](paper/Figures/my_figure_4.png)
-    *   Accumulated Reward: ![Accumulated Reward](paper/Figures/my_figure_5.png)
-*   **Impact of UAV Speed:**
-    *   Number of Transmitted Bits and Localization Error: ![Number of Transmitted Bits and Localization Error](paper/Figures/new_fig_1.png)
-    *   UAV Flight Time: ![UAV Flight Time](paper/Figures/new_fig_2.png)
-*   **Performance Comparison for Different Weights and UAV Speeds:**
-    *   ![Performance Comparison](paper/Figures/10_w_1.png)
-    *   ![Performance Comparison](paper/Figures/10_w_2.png)
-    *   ![Performance Comparison](paper/Figures/10_w_3.png)
-    *   ![Performance Comparison](paper/Figures/20_w_1.png)
-    *   ![Performance Comparison](paper/Figures/20_w_2.png)
-    *   ![Performance Comparison](paper/Figures/20_w_3.png)
-    *   ![Performance Comparison](paper/Figures/30_w_1.png)
-    *   ![Performance Comparison](paper/Figures/30_w_2.png)
-    *   ![Performance Comparison](paper/Figures/30_w_3.png)
+```bash
+pip install -r requirements.txt
+```
 
-## Getting Started
+### 3. Train the RL Agent
 
-1.  **Clone the repository:**
+```bash
+python training/train_dqn.py
+```
 
-    ```bash
-    git clone <repository_url>
-    cd <repository_name>
-    ```
+or
 
-2.  **Install the dependencies:**
+```bash
+python Double_DQN.py
+```
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+## Key Results
 
-3.  **Run the training script:**
+The following figures summarize simulation results and provide insights into the trade-offs between throughput, localization error, and UAV speed.
 
-    ```bash
-    python training/train_dqn.py
-    ```
+### **Fig. 1: System Architecture**
+![System Architecture](paper/Figures/fig1.png)  
+The UAV communicates with users and localizes targets in a DFRC setup.
 
-    or
+---
 
-    ```bash
-    python Double_DQN.py
-    ```
+### **Fig. 2: Trilateration-Based Localization**
+![Trilateration](paper/Figures/fig2.png)  
+Concentric RSSI circles are used to estimate user positions.
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit pull requests or open issues to suggest improvements or report bugs.
+### **Fig. 3: Power Consumption vs UAV Speed**
+![Power Consumption](paper/Figures/speed_fig.png)  
+Shows the relationship between speed and power consumption components.
+
+---
+
+### **Fig. 4: RSSI Ring Intersections**
+![Ring Intersection](paper/Figures/fig_4.png)  
+Illustrates how two RSSI-based measurements help localize targets.
+
+---
+
+### **Fig. 5: Training Curves**
+- **(a)** Transmitted Bits  
+  ![Bits](paper/Figures/my_figure_1.png)  
+- **(b)** Localization Error  
+  ![Error](paper/Figures/my_figure_2.png)  
+- **(c)** UAV Flight Time  
+  ![Flight Time](paper/Figures/my_figure_4.png)
+
+DDQN training results showing convergence of key objectives.
+
+---
+
+### **Fig. 6: Impact of UAV Speed**
+- **(a)** Throughput vs. Localization Error  
+  ![Speed 1](paper/Figures/new_fig_1.png)
+- **(b)** UAV Flight Time  
+  ![Speed 2](paper/Figures/new_fig_2.png)
+
+Trade-offs observed as UAV speed changes.
+
+---
+
+### **Fig. 7: Performance Under Different Reward Weights**
+- ![10_w_1](paper/Figures/10_w_1.png)
+- ![10_w_2](paper/Figures/10_w_2.png)
+- ![10_w_3](paper/Figures/10_w_3.png)
+
+Comparison of performance with different weight settings for throughput vs. localization.
+
+## Citation
+
+If you use this code or refer to this work, please cite the corresponding publication (to be added when available).
 
 ## License
 
-[License]
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Acknowledgements
+
+This research was supported by the European Commission through the H2020 PAINLESS Project under Grant 812991.
